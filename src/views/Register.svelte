@@ -1,6 +1,6 @@
 <script>
   import { Link, navigate } from "svelte-routing";
-  import { setCookie } from "../utils/utils";
+  import { api, setCookie } from "../utils/utils";
 
   let firstname = "",
     lastname = "",
@@ -14,7 +14,7 @@
 
   async function Signup() {
     if (matchpassword) {
-      const response = await fetch("https://apidev.kanvas.dev/v2/users", {
+      const response = await fetch(`${api}/users`, {
         headers: {
           "Content-Type": "application/json",
         },

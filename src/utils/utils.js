@@ -1,4 +1,7 @@
 
+export const api = "https://apidev.kanvas.dev/v2";
+
+
 export function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));

@@ -1,5 +1,5 @@
 <script>
-  import { setCookie } from "../utils/utils";
+  import { api, setCookie } from "../utils/utils";
   import { Link, navigate } from "svelte-routing";
 
   let email = "",
@@ -7,7 +7,7 @@
     error = "";
 
   async function login() {
-    const response = await fetch("https://apidev.kanvas.dev/v2/auth", {
+    const response = await fetch(`${api}/auth`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

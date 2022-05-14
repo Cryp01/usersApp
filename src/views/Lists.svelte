@@ -1,5 +1,5 @@
 <script>
-  import { getCookie } from "../utils/utils";
+  import { api, getCookie } from "../utils/utils";
   import { navigate } from "svelte-routing";
   import { onMount } from "svelte/internal";
 
@@ -16,7 +16,7 @@
   }
 
   onMount(async () => {
-    const response = await fetch("https://apidev.kanvas.dev/v2/users", {
+    const response = await fetch(`${api}/users`, {
       method: "GET",
       headers: {
         Authorization: token,
